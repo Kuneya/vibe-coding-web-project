@@ -1,0 +1,33 @@
+<%- include('template/cabecera', { tituloPagina: 'Eliminar Cuenta', estilo: 'eliminar_usuario.css' }) %>
+
+<body>
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4 text-danger">¿Estás seguro de que deseas eliminar tu cuenta?</h2>
+
+      <div class="card shadow">
+        <div class="card-body text-center">
+          <p class="lead">Esta acción no se puede deshacer.</p>
+
+          <% if (deportista) { %>
+            <p><strong>Nombre:</strong> <%= deportista.nombres %> <%= deportista.apellidos %></p>
+            <form method="POST" action="/deportistas/eliminar/<%= deportista.id %>">
+              <button class="btn btn-danger">Eliminar cuenta</button>
+            </form>
+          <% } else if (patrocinador) { %>
+            <p><strong>Nombre:</strong> <%= patrocinador.nombre %></p>
+            <form method="POST" action="/patrocinadores/eliminar/<%= patrocinador.id %>">
+              <button class="btn btn-danger">Eliminar cuenta</button>
+            </form>
+          <% } %>
+
+          <div class="mt-4">
+            <a href="/index" class="btn btn-secondary">Cancelar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<%- include('template/cabecera',{tituloPagina:'Eventos',estilo:'eventos.css'}) %>
+<body>
+  <%- include('template/navbar') %>
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Próximos Eventos Olímpicos e Internacionales</h1>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered align-middle">
+        <thead class="table-dark">
+          <tr>
+            <th>Evento</th>
+            <th>Tipo</th>
+            <th>Disciplina</th>
+            <th>Fecha</th>
+            <th>Lugar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Juegos Olímpicos de Verano París 2024</td>
+            <td>Olímpico - Verano</td>
+            <td>Multideporte</td>
+            <td>26 julio - 11 agosto 2024</td>
+            <td>París, Francia</td>
+          </tr>
+          <tr>
+            <td>Juegos Olímpicos de Invierno Milano Cortina 2026</td>
+            <td>Olímpico - Invierno</td>
+            <td>Multideporte</td>
+            <td>6 - 22 febrero 2026</td>
+            <td>Milán y Cortina d'Ampezzo, Italia</td>
+          </tr>
+          <tr>
+            <td>Copa Mundial de Fútbol 2026</td>
+            <td>Competencia Internacional</td>
+            <td>Fútbol</td>
+            <td>8 junio - 3 julio 2026</td>
+            <td>EE. UU., Canadá y México</td>
+          </tr>
+          <tr>
+            <td>Mundial de Atletismo 2025</td>
+            <td>Competencia Internacional</td>
+            <td>Atletismo</td>
+            <td>Agosto 2025</td>
+            <td>Tokio, Japón</td>
+          </tr>
+          <tr>
+            <td>Mundial de Natación 2025</td>
+            <td>Competencia Internacional</td>
+            <td>Natación</td>
+            <td>Febrero 2025</td>
+            <td>Singapur</td>
+          </tr>
+          <tr>
+            <td>Campeonato Mundial de Gimnasia Artística 2025</td>
+            <td>Competencia Internacional</td>
+            <td>Gimnasia</td>
+            <td>Octubre 2025</td>
+            <td>Valencia, España</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+   <%- include('template/footer') %>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
+</body>
+</html>

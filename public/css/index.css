@@ -1,0 +1,250 @@
+footer a:hover {
+    color: #ffc107;
+}
+
+  /*Aqui empieza el CSS de Hero Section*/
+  .hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*background-color: #3b5ba5;*/
+    background-color: white;
+    overflow: hidden;
+  }
+
+  .hero-text {
+    padding: 12rem;
+    color: black; /* Mejor en blanco sobre fondos oscuros */
+    font-weight: bold solid black;
+    animation: fadeInDown 1.5s ease-in-out;
+  }
+  
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-300px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+  #heroCarousel .carousel-item {
+    height: 80vh;
+  }
+
+  .carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .carousel-caption {
+    bottom: 40%;
+    
+  }
+
+  .carousel-image-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+
+  .carousel-image-wrapper .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Oscurece la imagen */
+    pointer-events: none; /* No bloquea clics */
+    /*z-index: 2;*/
+  }
+  
+
+  /***************************************************************************************************/
+  
+  @media (max-width: 768px) {
+    .hero-section h1 {
+      font-size: 2.5rem; /* Ajustar el tamaño en pantallas más pequeñas */
+    }
+  
+    .hero-section .lead {
+      font-size: 1.4rem; /* Ajustar el tamaño en pantallas más pequeñas */
+    }
+  
+    .hero-section .fs-5 {
+      font-size: 1.1rem; /* Ajustar el tamaño en pantallas más pequeñas */
+    }
+  }
+  
+  /*Aqui empieza el CSS de los recuadros*/
+.card {
+  border-radius: 1rem;
+  padding: 1.5rem;
+  height: 100%; /* Asegura que ocupe toda la altura disponible */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 1.3rem; /* Ligeramente más grande para compensar verticalmente */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  font-size: 1rem;
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+ol.small {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Opcional: mejora visual en botones */
+.card .btn {
+  width: 100%;
+  padding: 0.6rem 1rem;
+}
+
+  
+/*Carrusel testimonios*/
+
+.testimonios-bg {
+  background-color: #fdf2e9;
+}
+
+#testimonialCarousel .carousel-indicators {
+  position: static; /* Evita que se monten encima */
+  /*margin-top: 2rem; /* Un poco de espacio abajo */
+}
+
+#testimonialCarousel .carousel-indicators button {
+  background-color: #003366; /* Azul rey fuerte */
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+#testimonialCarousel .carousel-indicators .active {
+  opacity: 1;
+  background-color: #003366;
+}
+
+#testimonialCarousel .carousel-indicators button:hover {
+  opacity: 0.8;
+  transform: scale(1.2); /* Que crezcan un poquito al pasar el mouse */
+}
+
+#testimonialCarousel {
+  pointer-events: auto; /* Permite que los eventos pasen */
+}
+
+#testimonialCarousel:hover {
+  pointer-events: none; /* No detiene el carrusel cuando está en hover */
+}
+
+.testimonial-item {
+  margin-top: 3rem;
+}
+
+
+/*Gracias a quienes hacen posible que la plataforma siga viva*/
+.apoyo-bg {
+  background-color: #f8f9fa; /* Gris claro elegante */
+}
+
+.apoyo-bg h2 {
+  font-weight: bold;
+}
+
+.apoyo-bg p {
+  font-size: 1.2rem;
+}
+
+/*FAQ*/
+#faq h4 {
+  text-align: center; /* Centra el texto */
+  font-weight: bold;
+}
+
+.accordion-button {
+  background-color: #f7f7f7; /* Fondo muy suave, ideal para un look limpio */
+  border: 1px solid #ddd; /* Borde sutil, sin ser demasiado fuerte */
+  color: #495057; /* Gris oscuro para el texto, muy legible */
+  padding: 1rem; /* Un poco más de espacio para mayor comodidad */
+}
+/* Estilo de los botones del acordeón cuando están colapsados */
+.accordion-button.collapsed {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  color: #333; /* Color de texto cuando está cerrado */
+}
+.accordion-button:not(.collapsed) {
+  background-color: #e2e6ea; /* Gris claro para resaltar cuando se expande */
+  color: #000033; /* Un verde suave para el texto, fresco y amable */
+  font-weight: bold;
+}
+
+.accordion-body {
+  font-size: 1rem;
+  color: #212529; /* Gris oscuro para el contenido, fácil de leer */
+  padding: 1rem 1.5rem; /* Espaciado cómodo */
+}
+
+/*----*/
+
+.sliderHistorias{
+  background: #fdf2e9; /* Azul claro semitransparente */ 
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  color: black; 
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(240deg); 
+}
+
+.Tzunuum {
+  height: 100%;
+  background: black;
+  color: white;
+  /* padding: 100px 20px;
+  min-height: 400px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Tzunuum h1 {
+  font-weight: bold;
+  font-size: 3rem;
+  color: #d6a13b;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.Tzunuum p {
+  font-size: 1.25rem;
+  max-width: 700px;
+  color: #e0bf56;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}

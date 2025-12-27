@@ -1,0 +1,68 @@
+<section class="container my-5" id="aqui">
+      <% if (deportista) { %>
+        <!-- Sección personalizada para deportistas logeados -->
+        <div class="text-center">
+          <h3 class="text-primary mb-4">¡Prepárate para destacar!</h3>
+          <p class="lead">¿Ya actualizaste tu perfil recientemente? Mantén tus logros y portafolio al día para atraer
+            patrocinadores.</p>
+          <a href="/deportistas/perfil/<%= deportista.id %>" class="btn btn-success btn-lg mt-3">Ir a mi perfil</a>
+        </div>
+        <% } else if (patrocinador) { %>
+          <!-- Sección personalizada para patrocinadores logeados -->
+          <div class="text-center">
+            <h3 class="text-primary mb-4">¡Conecta con el talento deportivo!</h3>
+            <p class="lead">Explora nuevos perfiles y encuentra al atleta ideal para tu proyecto o marca.</p>
+            <a href="/mostrar_deportistas" class="btn btn-info btn-lg mt-3">Buscar deportistas</a>
+          </div>
+          <% } else { %>
+            <!-- Sección original para usuarios no logeados -->
+            <div class="row justify-content-center g-4 align-items-stretch">
+
+              <!-- Deportista -->
+              <div class="col-md-6 col-lg-4 d-flex">
+                <div class="card shadow w-100">
+                  <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                      <h5 class="card-title">Regístrate como deportista</h5>
+                      <p class="card-text">Conecta con patrocinadores que buscan talento como el tuyo. Sigue estos
+                        pasos:</p>
+                      <ol class="small">
+                        <li><strong>Regístrate:</strong> Crea tu perfil deportivo.</li>
+                        <li><strong>Completa tu información:</strong> Añade logros y datos clave.</li>
+                        <li><strong>Sube tu portafolio:</strong> Fotos, videos, estadísticas.</li>
+                        <li><strong>Explora oportunidades:</strong> Postúlate con patrocinadores.</li>
+                        <li><strong>Concreta tu patrocinio:</strong> Negocia y formaliza tu apoyo.</li>
+                      </ol>
+                    </div>
+                    <div class="text-center mt-3">
+                      <a href="/deportistas/registro_deportistas" class="btn btn-primary">Regístrate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Patrocinador -->
+              <div class="col-md-6 col-lg-4 d-flex">
+                <div class="card shadow w-100">
+                  <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                      <h5 class="card-title">Regístrate como patrocinador(a)</h5>
+                      <p class="card-text">Encuentra atletas con potencial y fortalece tu compromiso con el deporte:</p>
+                      <ol class="small">
+                        <li><strong>Regístrate:</strong> Crea tu perfil de patrocinador.</li>
+                        <li><strong>Explora talentos:</strong> Revisa perfiles, videos y logros de los atletas.</li>
+                        <li><strong>Conecta:</strong> Contacta a deportistas que se alineen con tu visión.</li>
+                        <li><strong>Propón un patrocinio:</strong> Envía ofertas personalizadas.</li>
+                        <li><strong>Apoya el crecimiento:</strong> Sé parte del desarrollo de futuros campeones.</li>
+                      </ol>
+                    </div>
+                    <div class="text-center mt-3">
+                      <a href="/patrocinadores/registro_patrocinadores" class="btn btn-outline-primary">Regístrate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <% } %>
+    </section>

@@ -1,0 +1,40 @@
+<%- include('template/cabecera', { tituloPagina: 'Perfil del Deportista', estilo: 'perfil_deportista.css' }) %>
+
+<body>
+  <%- include('template/navPer') %>
+  <section class="py-5 bg-light container">
+    <div class="container">
+      <h2 class="text-center mb-4">Perfil del Deportista</h2>
+
+      <div class="card shadow">
+        <div class="card-body">
+          <h4 class="card-title mb-3"><%= deportista.nombres %> <%= deportista.apellidos %></h4>
+
+          <p><strong>Correo electrónico:</strong> <%= deportista.email %></p>
+          <p><strong>Fecha de nacimiento:</strong> <%= deportista.fecha_nacimiento.toISOString().slice(0, 10) %></p>
+          <p><strong>País:</strong> <%= deportista.pais %></p>
+          <p><strong>Disciplina deportiva:</strong> <%= deportista.disciplina %></p>
+          <p><strong>Logros:</strong> <%= deportista.logros %></p>
+          <p><strong>Portafolio:</strong> <a href="<%= deportista.portafolio %>" target="_blank"><%= deportista.portafolio %></a></p>
+          <p><strong>Objetivos:</strong> <%= deportista.objetivos %></p>
+          <p><strong>Preferencias de patrocinio:</strong> <%= deportista.preferencias %></p>
+          <p><strong>Referencias:</strong> <%= deportista.referencias %></p>
+          <p><strong>Consentimiento para uso de imagen:</strong> <%= deportista.consentimiento ? "Sí" : "No" %></p>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="../../" class="btn btn-secondary">Volver al inicio</a>
+        <a href="/deportistas/editar/<%= deportista._id %>" class="btn btn-warning">Editar perfil</a>
+
+        <form action="/deportistas/eliminar/<%= deportista._id %>" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar tu cuenta?');">
+      <button type="submit" class="btn btn-danger mt-4">Eliminar mi cuenta</button>
+  </form>
+      </div>
+
+    </div>
+  </section>
+  <%- include('template/footer') %>
+</body>
+
+</html>

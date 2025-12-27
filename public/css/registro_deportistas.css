@@ -1,0 +1,30 @@
+#registro-deportista h2 {
+  font-weight: 700;
+  color: #004080;
+}
+
+#registro-deportista .form-label {
+  font-weight: 600;
+}
+
+#registro-deportista .form-control,
+#registro-deportista .form-select {
+  border-radius: 0.5rem;
+}
+
+#registro-deportista .btn-success {
+  border-radius: 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#registro-deportista .btn-success:hover {
+  background-color: #218838;
+}
+.password-valid {
+  color: green;
+}
+
+.password-invalid {
+  color: red;
+}

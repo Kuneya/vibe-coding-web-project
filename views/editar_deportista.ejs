@@ -1,0 +1,91 @@
+<%- include('template/cabecera', { tituloPagina: 'Editar Perfil del Deportista', estilo: 'registro_deportistas.css' }) %>
+
+<body>
+  <%- include('template/navPer') %>
+  <section id="editar-deportista" class="py-5 bg-light container">
+    <div class="container">
+      <h2 class="text-center mb-5">Editar tu perfil</h2>
+      <form action="/deportistas/actualizar/<%= deportista._id %>" method="POST" class="needs-validation" novalidate>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <label for="nombres" class="form-label">Nombre(s)</label>
+            <input type="text" class="form-control" id="nombres" name="nombres" value="<%= deportista.nombres %>" required>
+          </div>
+
+          <div class="col-md-6">
+            <label for="apellidos" class="form-label">Apellido(s)</label>
+            <input type="text" class="form-control" id="apellidos" name="apellidos" value="<%= deportista.apellidos %>" required>
+          </div>
+
+          <div class="col-md-6">
+            <label for="fecha-nacimiento" class="form-label">Fecha de nacimiento</label>
+            <input type="date" class="form-control" id="fecha-nacimiento" name="fecha_nacimiento" value="<%= deportista.fecha_nacimiento.toISOString().slice(0,10) %>" required>
+          </div>
+
+          <div class="col-md-6">
+            <label for="pais" class="form-label">País de origen</label>
+            <select class="form-select" id="pais" name="pais" required>
+              <option selected><%= deportista.pais %></option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label for="disciplina" class="form-label">Disciplina deportiva</label>
+            <select class="form-select" id="disciplina" name="disciplina" required>
+              <option selected><%= deportista.disciplina %></option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="email" name="email" value="<%= deportista.email %>" required>
+          </div>
+
+          <!-- Aquí NO editamos la contraseña directamente -->
+
+          <div class="col-md-6">
+            <label for="logros" class="form-label">Principales logros deportivos</label>
+            <textarea class="form-control" id="logros" name="logros" rows="3"><%= deportista.logros %></textarea>
+          </div>
+
+          <div class="col-12">
+            <label for="portafolio" class="form-label">Portafolio digital</label>
+            <input type="url" class="form-control" id="portafolio" name="portafolio" value="<%= deportista.portafolio %>">
+          </div>
+
+          <div class="col-md-12">
+            <label for="objetivos" class="form-label">Objetivos</label>
+            <textarea class="form-control" id="objetivos" name="objetivos" rows="3"><%= deportista.objetivos %></textarea>
+          </div>
+
+          <div class="col-md-12">
+            <label for="preferencias" class="form-label">Preferencias de patrocinio</label>
+            <textarea class="form-control" id="preferencias" name="preferencias" rows="3"><%= deportista.preferencias %></textarea>
+          </div>
+
+          <div class="col-md-12">
+            <label for="referencias" class="form-label">Referencias</label>
+            <textarea class="form-control" id="referencias" name="referencias" rows="3"><%= deportista.referencias %></textarea>
+          </div>
+
+          <div class="col-md-12">
+            <label class="form-label">¿Autorizas el uso de tu imagen?</label><br>
+            <input type="checkbox" id="consentimiento" name="consentimiento" <%= deportista.consentimiento ? 'checked' : '' %> >
+            <label for="consentimiento">Sí, autorizo.</label>
+          </div>
+
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary px-5">Guardar cambios</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <%- include('template/footer') %>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/registro_deportistas.js"></script>
+</body>
+</html>

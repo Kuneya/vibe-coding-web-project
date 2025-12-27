@@ -1,0 +1,30 @@
+<%- include('template/cabecera', { tituloPagina: 'Perfil del Patrocinador', estilo: 'perfil_patrocinador.css' }) %>
+
+<body>
+  <%- include('template/navPer') %>
+  <section class="py-5 bg-light container">
+    <div class="container">
+      <h2 class="text-center mb-4">Perfil del Patrocinador</h2>
+
+      <div class="card shadow">
+        <div class="card-body">
+          <h4 class="card-title mb-3"><%= patrocinador.nombre %></h4>
+
+          <p><strong>Correo electrónico:</strong> <%= patrocinador.email %></p>
+          <p><strong>Consentimiento para contacto:</strong> <%= patrocinador.consentimiento ? "Sí" : "No" %></p>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="/inicio" class="btn btn-secondary">Volver al inicio</a>
+        <a href="/patrocinadores/editar/<%= patrocinador._id %>" class="btn btn-warning">Editar perfil</a>
+        <form action="/patrocinadores/eliminar/<%= patrocinador._id %>" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar tu cuenta?');">
+         <button type="submit" class="btn btn-danger mt-4">Eliminar mi cuenta</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <%- include('template/footer') %>
+</body>
+
+</html>

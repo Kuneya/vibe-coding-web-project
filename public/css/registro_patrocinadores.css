@@ -1,0 +1,31 @@
+#registro-patrocinador h2 {
+      font-weight: 700;
+      color: #004080;
+    }
+
+    #registro-patrocinador .form-label {
+      font-weight: 600;
+    }
+
+    #registro-patrocinador .form-control {
+      border-radius: 0.5rem;
+    }
+
+    #registro-patrocinador .btn-success {
+      border-radius: 2rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    #registro-patrocinador .btn-success:hover {
+      background-color: #218838;
+    }
+
+    .password-valid {
+      color: green;
+    }
+
+    .password-invalid {
+      color: red;
+    }
+   

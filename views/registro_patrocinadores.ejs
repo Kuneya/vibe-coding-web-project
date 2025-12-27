@@ -1,0 +1,77 @@
+<%- include('template/cabecera',{tituloPagina:'Registro de Patrocinadores',estilo:'registro_patrocinadores.css'}) %>
+<body>
+  <%- include('template/navReg')%>
+  <section id="registro-patrocinador" class="py-5 bg-light container">
+    <div class="container">
+      <h2 class="text-center mb-5">Crea una cuenta nueva como patrocinador</h2>
+      <form class="needs-validation" novalidate autocomplete="off" method="POST" action="/patrocinadores">
+        <div class="row g-4">
+          
+          <div class="col-md-6">
+            <label for="nombre" class="form-label">Nombre completo o representante</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+            <div class="invalid-feedback">Por favor, ingresa tu nombre completo.</div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="email" name="email" required
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+            <div class="invalid-feedback">Correo no válido.</div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="password" class="form-label">
+              Contraseña
+              <i class="bi bi-info-circle-fill ms-1 text-primary" data-bs-toggle="tooltip"
+                title="Mínimo 8 caracteres, incluyendo mayúsculas, minúsculas, número y símbolo."></i>
+            </label>
+            <div class="input-group">
+              <input type="password" class="form-control" id="password" name="password"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}" required>
+              <button type="button" class="btn btn-outline-secondary" id="toggle-password">
+                <i class="bi bi-eye-slash-fill"></i>
+              </button>
+            </div>
+            <div id="password-strength" class="form-text mt-1"></div>
+            <div class="invalid-feedback">Debe cumplir los requisitos de seguridad.</div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="confirm-password" class="form-label">Confirmar contraseña</label>
+            <div class="input-group">
+              <input type="password" class="form-control" id="confirm-password" name="confirm_password" required>
+              
+            </div>
+            <div id="confirm-password-message" class="form-text mt-1"></div>
+            <div class="invalid-feedback" id="confirm-password-feedback">Las contraseñas no coinciden.</div>
+          </div>
+
+          <div class="col-12">
+            <input type="checkbox" id="consentimiento" name="consentimiento" required>
+            <label for="consentimiento">Autorizo que se me contacte con fines relacionados al proyecto.</label>
+          </div>
+
+          <div class="form-text mt-2 text-center">
+            Al hacer clic en <strong>“Registrarme”</strong>, aceptas nuestras 
+            <a href="ruta-a-tu-politica.html" target="_blank">políticas de privacidad</a>.
+          </div>
+
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-success btn-lg px-5">Registrarme</button>
+          </div>
+          <div class="text-center mt-3">
+                <p>¿Ya tienes una cuenta? <a href="/patrocinadores/login">Inicia sesión aquí</a></p>
+              </div>
+          
+
+        </div>
+      </form>
+    </div>
+  </section>
+  <%- include('template/footer')%>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/registro_patrocinadores.js"></script>
+</body>
+</html>
